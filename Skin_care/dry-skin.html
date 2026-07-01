@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dry skin routine</title>
+    <style>
+        :root {
+            --soft-pink: #fce4ec;
+            --deep-pink: #f06292;
+            --beige-bg: #fff5e6;
+            --gold: #d4af37;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--beige-bg);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #444;
+        }
+
+        header {
+            background-color: white;
+            padding: 30px;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        header h1 { color: var(--deep-pink); }
+
+        .back-btn {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 25px;
+            background-color: var(--deep-pink);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { background-color: var(--gold); }
+
+        .content-section {
+            background: white;
+            margin: 20px auto;
+            padding: 30px;
+            width: 85%;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+            gap: 25px;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        .product-item {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.4s;
+            max-width: 220px;
+        }
+
+        .product-item:hover { transform: translateY(-10px); }
+
+        .product-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid var(--soft-pink);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-desc {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 10px;
+            padding: 0 5px;
+            line-height: 1.4;
+        }
+
+        footer {
+            background: linear-gradient(45deg, #f06292, #fce4ec, #f06292);
+            background-size: 200% 200%;
+            animation: moveGradient 4s ease infinite;
+            color: white;
+            padding: 30px;
+            border-top: 3px solid var(--gold);
+            font-weight: bold;
+            margin-top: 50px;
+        }
+
+        @keyframes moveGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Dry Skin Section</h1>
+        <h2>Deep Hydration for a Radiant Glow</h2>
+    </header>
+
+    <a href="skin.html" class="back-btn">← Go Back</a>
+
+    <div class="content-section">
+        <h2 style="color: var(--gold);">Recommended Products For You</h2>
+        
+        <div class="products-grid">
+            
+            <a href="#" class="product-item">
+                <div class="product-img">
+                    <img src="dry-cleanser.jpg" alt="غسول كريمي">
+                </div>
+                <p>Elegon.. Luxurious Cleansing for Dry Skin
+
+Contains Hyaluronic Acid: Draws moisture into skin cells during washing, ensuring your skin stays hydrated and soft without feeling tight.
+
+Contains Vitamin E: A powerful antioxidant that nourishes the skin, protects it from external factors, and helps reduce flakiness common in dry skin.
+
+Contains Panthenol: Acts as a fast repair agent for the skin barrier, soothing any redness or irritation caused by severe dryness.</p>
+                
+            </a>
+
+            <a href="#" class="product-item">
+                <div class="product-img">
+                    <img src="moist-1.jpg" alt="مرطب غني">
+                </div>
+                <p>Contains Phytosterols, Omega 3 & 6 (from Flaxseed Oil), Glycerin, Panthenol, and Soothing Chamomile Extract.  
+Benefits:
+
+Rebuilds and restores the skin’s natural lipid barrier.
+
+Reduces inflammation, redness, and itching caused by dryness.
+
+Soft creamy texture that absorbs quickly without leaving any greasy residue..</p>
+                
+            </a>
+<a href="#" class="product-item">
+                <div class="product-img">
+                    <img src="dry-sunblock.jpg" alt="صن بلوك">
+                </div>
+                <p>Bobai Sunscreen (Bobai Cream) – Protection & Hydration in One
+
+Contains SPF 50+ Filters: Provide a protective shield against harmful UV rays to prevent burns and pigmentation.
+
+Contains Vitamin E: Deeply nourishes the skin layers and helps prevent early signs of aging.
+
+Moisturizing Formula: Prevents moisture loss during heat exposure, keeping your skin soft and smooth all day long.</p>
+                
+            </a>
+</a>
+<a href="#" class="product-item">
+                <div class="product-img">
+                    <img src="hyaluronic.jpg" alt="هيالورونيك أسيد">
+                </div>
+                <p>Contains Hyaluronic Acid: Acts as a “water magnet,” attracting and locking moisture within the skin layers, reducing the appearance of fine lines caused by dryness.
+Contains Vitamin B5 (Panthenol): Soothes dry skin and repairs its natural barrier, leaving it softer and more flexible.
+Contains Collagen Extract: Enhances skin elasticity, giving it a plumping effect and a healthy glow that lasts.</p>
+                
+            </a>
+<a href="#" class="product-item">
+                <div class="product-img">
+                    <img src="dry-vitamin-c.jpg" alt="فيتامين سي">
+                </div>
+                <p>Starfill Serum.. Irresistible Glow & Radiance
+
+Contains 10% Vitamin C: A powerful antioxidant that brightens dark spots, evens out skin tone, and stimulates natural collagen production.
+
+Contains Vitamin E: Deeply nourishes dry skin and protects it from oxidation and dullness.
+
+Contains Hyaluronic Acid: Locks moisture into the skin, ensuring hydration and radiance without any dryness.</p>
+                
+            </a>
+
+
+            </div>
+    </div>
+
+    <footer>
+       Where beauty finds its room
+    </footer>
+
+</body>
+</html>

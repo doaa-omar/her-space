@@ -1,0 +1,69 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow & Flow | Wellness Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --bg: #FCF8F5; --pink: #FADADD; --gold: #D4AF37; --text: #5D5451; --white: #FFFFFF; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); margin: 0; }
+        .container { width: 85%; max-width: 1000px; margin: 0 auto; padding: 50px 0; }
+        
+      
+        .hero-header {
+            height: 400px;
+            background: linear-gradient(rgba(250, 218, 221, 0.4), rgba(250, 218, 221, 0.4)), url('pic1.jpg') center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+        .hero-header h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.2); }
+        .intro { color: var(--white); letter-spacing: 5px; font-size: 0.9rem; font-weight: 600; margin-top: 10px; text-shadow: 1px 1px 5px rgba(0,0,0,0.2); }
+        
+        .branches-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .card { 
+            background: var(--white); padding: 40px; border-radius: 20px; text-align: center;
+            text-decoration: none; color: inherit; border: 2px solid var(--pink);
+            transition: 0.4s ease; box-shadow: 0 10px 20px rgba(250, 218, 221, 0.2);
+        }
+        .card:hover { transform: translateY(-10px); border-color: var(--gold); }
+        .card i { color: var(--gold); margin-bottom: 20px; }
+        .card h2 { font-family: 'Playfair Display', serif; margin-bottom: 15px; }
+        .card p { font-size: 0.95rem; line-height: 1.8; color: #7a716e; }
+        .btn-link { margin-top: 20px; display: inline-block; color: var(--gold); font-weight: bold; font-size: 0.8rem; letter-spacing: 2px; border-bottom: 1px solid var(--gold); padding-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <header class="hero-header">
+        <h1>Glow & Flow</h1>
+        <p class="intro">ELEGANCE • WELLNESS • BEAUTY</p>
+    </header>
+    <div class="container">
+        <div class="branches-grid">
+            <a href="greens.html" class="card">
+                <i class="fas fa-leaf fa-3x"></i>
+                <h2>Vibrant Greens</h2>
+                <p>Nourish your body with organic essentials. Pure nature for a healthier, more vibrant lifestyle.</p>
+                <span class="btn-link">EXPLORE GALLERY</span>
+            </a>
+            <a href="hydration.html" class="card">
+                <i class="fas fa-tint fa-3x"></i>
+                <h2>Pure Hydration</h2>
+                <p>The secret to timeless beauty starts with water. Experience deep hydration like never before.</p>
+                <span class="btn-link">EXPLORE GALLERY</span>
+            </a>
+            <a href="fitness.html" class="card">
+                <i class="fas fa-heartbeat fa-3x"></i>
+                <h2>Fitness & Flow</h2>
+                <p>Move with purpose and grace. Strength and flexibility routines designed for the modern woman.</p>
+                <span class="btn-link">EXPLORE GALLERY</span>            </a>
+        </div>
+    </div>
+  <a href="../home/index.html"> back to home</a>
+</body>
+</html>

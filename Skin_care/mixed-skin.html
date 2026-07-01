@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combination Skin Routine</title>
+    <style>
+        :root {
+            --main-pink: #f06292; /* البينك الأساسي بتاعنا */
+            --light-pink: #fce4ec;
+            --beige-bg: #fff5e6;
+            --gold-accent: #d4af37;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--beige-bg);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: white;
+            padding: 40px;
+            border-bottom: 3px solid var(--main-pink);
+        }
+
+        header h1 { color: var(--main-pink); margin: 0; }
+        header p { color: #666; margin-top: 10px; }
+
+        .selection-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 60px 20px;
+            flex-wrap: wrap;
+        }
+
+        .choice-card {
+            background: white;
+            width: 320px;
+            padding: 40px 20px;
+            border-radius: 30px;
+            box-shadow: 0 15px 30px rgba(240, 98, 146, 0.1);
+            text-decoration: none;
+            color: #444;
+            transition: 0.4s ease-in-out;
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .choice-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--main-pink);
+            box-shadow: 0 20px 40px rgba(240, 98, 146, 0.2);
+        }
+
+        .choice-card .icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .choice-card h2 {
+            color: var(--main-pink);
+            margin-bottom: 15px;
+        }
+
+        .choice-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #777;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 50px;
+            padding: 12px 30px;
+            background-color: var(--main-pink);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: var(--gold-accent);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Combination Skin Section</h1>
+        <p>Choose Your Skin Type</p>
+    </header>
+
+    <div class="selection-container">
+        
+        <a href="mixed-oily.html" class="choice-card">
+            <div class="icon">✨</div>
+            <h2>Mixed To Oily Skin</h2>
+            <p>Notice excess oil on your forehead and nose, with enlarged pores, while the rest of your face feels normal or dry</p>
+        </a>
+
+        <a href="mixed-dry.html" class="choice-card">
+            <div class="icon">🌸</div>
+            <h2>Mixed To Dry Skin</h2>
+            <p>Does your skin feel tight and dry most of the time, with just a little oil on your nose? You have Dry-Combination Skin</p>
+        </a>
+
+    </div>
+
+    <a href="skin.html" class="back-btn">← Go Back</a>
+
+</body>
+</html>

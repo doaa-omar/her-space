@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oily Skin Routine</title>
+    <style>
+        :root {
+            --soft-pink: #fce4ec;
+            --deep-pink: #f06292;
+            --beige-bg: #fff5e6;
+            --gold: #d4af37;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--beige-bg);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #444;
+        }
+
+        header {
+            background-color: white;
+            padding: 30px;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        header h1 { color: var(--deep-pink); }
+
+        .back-btn {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 25px;
+            background-color: var(--deep-pink);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { background-color: var(--gold); }
+
+        .content-section {
+            background: white;
+            margin: 20px auto;
+            padding: 30px;
+            width: 85%;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        /* --- تنسيق شبكة الصور (المهم) --- */
+        .products-grid {
+            display: grid;
+            /* بيخلي الصور تترص جمب بعض تلقائياً */
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+            gap: 25px;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        .product-item {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.4s;
+        }
+
+        .product-item:hover { transform: translateY(-10px); }
+
+        .product-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid var(--soft-pink);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .product-img:hover { border-color: var(--gold); }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- الفوتر البينك اللامع --- */
+        footer {
+            background: linear-gradient(45deg, #f06292, #fce4ec, #f06292);
+            background-size: 200% 200%;
+            animation: moveGradient 4s ease infinite;
+            color: white;
+            padding: 30px;
+            border-top: 3px solid var(--gold);
+            font-weight: bold;
+            margin-top: 50px;
+        }
+
+        @keyframes moveGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Oily Skin Section</h1>
+        <h2>Stay Matte , Stay Fresh</h2>
+    </header>
+
+    <a href="skin.html" class="back-btn">← Go Back</a>
+
+    <div class="content-section">
+        <h2 style="color: var(--gold);">Recommended Products For Youِ</h2>
+        
+        
+        <div class="products-grid">
+            
+                 <a href="#" class="product-item">
+                <div class="product-img">
+                    <img src="cleanser.jpg" alt="غسول">
+                </div>
+                <p>Contains Salicylic Acid: Penetrates deep into pores to dissolve excess oils and prevent the formation of blackheads and pimples.
+Contains Tea Tree Oil: A natural antibacterial and anti-inflammatory agent that helps soothe the skin and treat active breakouts.
+Contains Aloe Vera Extract: Hydrates the skin and prevents dryness during deep cleansing, leaving your skin soft and supple.</p>
+            </a>
+            <a href="#" class="product-item">
+                <div class="product-img">
+                    <img src="mostrising.jpg" alt="مرطب">
+                </div>
+                <p>Contains Niacinamide: Works to even out skin tone, fade acne marks, and minimize the appearance of enlarged pores.
+Contains Panthenol: Deeply hydrates the skin, soothes redness or irritation, and helps repair a damaged skin barrier.
+Contains Ceramide Extract: Locks moisture inside the skin and prevents dryness, giving your complexion a healthy, smooth feel.</p>
+            </a>
+
+<a href="#" class="product-item">
+                <div class="product-img">
+                    <img src="serum.jpg" alt="منتج 4">
+                </div>
+                <p>Contains Alpha Arbutin: The strongest and safest ingredient for brightening skin spots, treating pigmentation, and fading post-acne marks (both brown and red).
+Contains Licorice Extract: A natural skin brightener that helps deliver instant radiance and even out dull skin tone.
+Contains Hyaluronic Acid: Ensures high hydration while the skin is brightening, keeping it soft and glowing all day.</p>
+            </a>
+<a href="#" class="product-item">
+                <div class="product-img">
+                    <img src="toner.jpg" alt="toner">
+                </div>
+                <p>Contains Alpha Hydroxy Acid (AHA): Gently exfoliates the skin’s surface, helping remove small blemishes and renew skin cells.
+Contains Witch Hazel: A natural ingredient that tightens enlarged pores and significantly reduces excess oil secretion.
+Contains Vitamin B3: Soothes redness and evens out skin tone after cleansing.</p>
+            </a>
+
+            <a href="#" class="product-item">
+                <div class="product-img">
+                    <img src="vitamin-c.jpg" alt="فيتامين سي">
+                </div>
+                <p>Contains Stable Vitamin C: A powerful antioxidant that protects your skin from sun damage and pollution, while instantly reviving dullness.
+Usage Tip: Apply before sunscreen to boost its effectiveness and provide extra protection against oxidation.</p>
+            </a>
+
+            <a href="#" class="product-item">
+                <div class="product-img">
+                    <img src="sunblock.jpg" alt="منتج 6">
+                </div>
+                <p>Melatim.. Maximum Protection & Silky Finish
+
+Contains SPF 50+ Filters: Provide complete protection against harmful sun rays (UVA/UVB), preventing pigmentation, freckles, and acne marks.
+
+Primer Base Technology: Smooths skin texture and temporarily minimizes enlarged pores, making it the perfect base before makeup or for a clear, shine-free look.
+
+Contains Vitamin E & Antioxidants: Deeply nourish the skin and protect it from oxidation, keeping your complexion fresh and radiant all day under the sun.</p>
+            </a>
+
+        </div>
+    </div>
+
+    <footer>
+        
+    </footer>
+
+</body>
+</html>
