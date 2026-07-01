@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Her Space</title>
+
+<style>
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #ffe6eb; 
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: white;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 75vh;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    align-items: right;
+}
+
+.hero .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color:black;
+}
+
+.hero .overlay-text h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero .overlay-text p {
+    font-size: 18px;
+}
+
+/* Content Text */
+.content {
+    padding: 30px;
+    text-align: center;
+}
+
+.content p {
+    font-size: 18px;
+    color: #444;
+}
+
+/* Cards Section */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 220px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card h3 {
+    padding: 15px;
+    font-size: 18px;
+    color: #333;
+}
+</style>
+
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo">
+        <img src="photos/6026099104003329265_120.jpg">
+        <span>Her Space</span>
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="about.html">About</a>
+        <a href="team.html">Team</a>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" text-align="center">
+    <img src="photos/home46.jpg">
+
+    <div class="overlay-text">
+        <h1 align="center">Elegant Living</h1>
+        <h5 align="center">A sanctuary for every woman's journey</p5>
+    </div>
+</section>
+
+<!-- Text Section -->
+<section class="content">
+    <p>
+        this is your girl era...glow care and live that soft life you deserve.
+    </p>
+</section>
+
+<!-- Cards -->
+<section class="cards">
+
+    <div class="card">
+        <a href="../daily_routine/routine.html" class="card">
+        <img src="photos/24eb0291ab6b2976287df391e6f7879a.jpg">
+        <h3>Daily Ruoten</h3>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="../body_care/body.html" class="card">
+        <img src="photos/ruoten3.jpg">
+        <h3>Body Care</h3>
+        </a>
+    </div>
+
+    <div class="card">
+         <a href="../skin_care/skin.html" class="card">
+        <img src="photos/ruoten4.jpg">
+        <h3>Skin Care</h3>
+        </a>
+    </div>
+<div class="card">
+        <a href="../style/style.html" class="card">
+        <img src="photos/style3.jpg">
+        <h3>Style</h3>
+        </a>
+    </div>
+<div class="card">
+        <a href="../hijab/hijab.html" class="card">
+        <img src="photos/6026099104003329232_121.jpg">
+        <h3>Hijab</h3>
+        </a>
+    </div>
+<div class="card">
+        <a href="../hair/home.html" class="card">
+        <img src="photos/57d73efaa38b3c48ca8449414b0f3040.jpg">
+        <h3>Hair</h3>
+        </a>
+    </div>
+<div class="card">
+        <a href="../mouth/mouth_care.html" class="card">
+        <img src="photos/6026099104003329237_120.jpg">
+        <h3>Muoth Care</h3>
+        </a>
+    </div>
+<div class="card">
+          <a href="../makeup/prlect.html" class="card">
+        <img src="photos/6026099104003329235_121.jpg">
+        <h3>Makeup</h3>
+        </a>
+    </div>
+<div class="card">
+        <a href="../diet/diet.html" class="card">
+        <img src="photos/diet1.jpg">
+        <h3>Diet</h3>
+        </a>
+    </div>
+
+
+</section>
+
+</body>
+</html>

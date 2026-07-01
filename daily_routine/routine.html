@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty Routine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose: #c8727a;
+      --rose-light: #f2d4d6;
+      --rose-dark: #9e4f56;
+      --cream: #fdf6f0;
+      --beige: #f0e6d8;
+      --brown: #6b4c3b;
+      --text: #3a2a22;
+      --white: #ffffff;
+      --green: #7a9e7e;
+      --green-light: #d4e8d6;
+      --purple: #8a7aad;
+      --purple-light: #e0dbf0;
+      --blue: #7a9eb5;
+      --blue-light: #d4e8f2;
+      --gold: #c9a84c;
+      --gold-light: #f5ecd0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--rose-dark) 0%, var(--rose) 50%, #e8a0a6 100%);
+      padding: 60px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50px; left: -50px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -30px;
+      width: 250px; height: 250px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      margin-top: 10px;
+      font-weight: 300;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-dots span {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+    }
+
+    .hero-dots span.active { background: white; width: 24px; border-radius: 4px; }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      padding: 20px 16px;
+      overflow-x: auto;
+      background: var(--white);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav::-webkit-scrollbar { display: none; }
+
+    .nav-btn {
+      white-space: nowrap;
+      padding: 8px 18px;
+      border-radius: 50px;
+      border: 2px solid transparent;
+      background: var(--beige);
+      color: var(--brown);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .nav-btn:hover, .nav-btn.active {
+      background: var(--rose);
+      color: white;
+      border-color: var(--rose);
+    }
+
+    main { padding: 30px 16px 60px; max-width: 700px; margin: 0 auto; }
+
+    .section {
+      margin-bottom: 40px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--beige);
+    }
+
+    .section-icon {
+      font-size: 2rem;
+      width: 54px; height: 54px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 16px;
+      flex-shrink: 0;
+    }
+
+    .section-title { font-size: 1.4rem; font-weight: 800; }
+    .section-subtitle { font-size: 0.85rem; font-weight: 400; opacity: 0.7; margin-top: 2px; }
+
+    .skin .section-icon { background: var(--rose-light); }
+    .skin .section-title { color: var(--rose-dark); }
+    .bath .section-icon { background: var(--blue-light); }
+    .bath .section-title { color: var(--blue); }
+    .nails .section-icon { background: var(--purple-light); }
+    .nails .section-title { color: var(--purple); }
+    .health .section-icon { background: var(--green-light); }
+    .health .section-title { color: var(--green); }
+    .natural .section-icon { background: var(--gold-light); }
+    .natural .section-title { color: var(--gold); }
+
+    .cards { display: grid; gap: 14px; }
+
+    .card {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      border: 1.5px solid var(--beige);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-title-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .skin .card-title-dot { background: var(--rose); }
+    .bath .card-title-dot { background: var(--blue); }
+    .nails .card-title-dot { background: var(--purple); }
+    .health .card-title-dot { background: var(--green); }
+    .natural .card-title-dot { background: var(--gold); }
+
+    .steps { display: flex; flex-direction: column; gap: 10px; }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .step-num {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      color: white;
+      margin-top: 1px;
+    }
+
+    .skin .step-num { background: var(--rose); }
+    .bath .step-num { background: var(--blue); }
+    .nails .step-num { background: var(--purple); }
+    .health .step-num { background: var(--green); }
+    .natural .step-num { background: var(--gold); }
+
+    .step-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text);
+      padding-top: 3px;
+    }
+
+    .warning {
+      background: #fff8e1;
+      border: 1.5px solid #ffe082;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.88rem;
+      color: #7a5c00;
+      margin-top: 10px;
+    }
+
+    .img-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .img-area {
+      width: 100%;
+      height: 140px;
+      border-radius: 14px;
+      overflow: visible;
+      position: relative;
+      background: var(--beige);
+      border: 2px dashed #d4c0b0;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .img-area:hover { border-color: var(--rose); }
+
+    
+
+    .img-preview {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+   
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--rose-dark);
+      font-size: 0.9rem;
+      font-weight: 500;
+      background: var(--beige);
+    }
+
+    footer span { font-size: 1.2rem; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>✨ Beauty Routine</h1>
+  <p>Practical steps for glowing skin & complete wellness</p>
+  <div class="hero-dots">
+    <span class="active"></span><span></span><span></span><span></span><span></span>
+  </div>
+</div>
+
+<nav class="nav">
+  <button class="nav-btn active" onclick="scrollToSection('skin', this)">🌸 Skin</button>
+  <button class="nav-btn" onclick="scrollToSection('bath', this)">🛁 Bath</button>
+  <button class="nav-btn" onclick="scrollToSection('nails', this)">💅 Nails</button>
+  <button class="nav-btn" onclick="scrollToSection('health', this)">💪 Health</button>
+  <button class="nav-btn" onclick="scrollToSection('natural', this)">🌿 Recipes</button>
+</nav>
+
+<main>
+
+  <!-- SKIN -->
+  <section class="section skin" id="skin">
+    <div class="section-header">
+      <div class="section-icon">🌸</div>
+      <div>
+        <div class="section-title">Skin Care</div>
+        <div class="section-subtitle">4 essential daily steps</div>
+      </div>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="img-row">
+          <div class="img-area">
+            <img class="img-preview" alt="Face Wash 1" src="photo/routine.jpg">
+            
+          </div>
+          <div class="img-area">
+            <img class="img-preview" alt="Face Wash 2" src="photo/routine1.jpg">
+           
+          </div>
+        </div>
+        <div class="card-title"><span class="card-title-dot"></span>Face Cleansing</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Wet your face with lukewarm water</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Apply a cleanser suited to your skin type and massage in circular motions for 2 minutes</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Rinse with cold water to tighten pores</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Pat dry with a soft towel — never rub</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img-row">
+          <div class="img-area">
+            <img class="img-preview" alt="Moisturizer 1" src="photo/routine2.jpg">
+         >
+          </div>
+          <div class="img-area">
+            <img class="img-preview" alt="Moisturizer 2" src="photo/routine3.jpg">
+           
+          </div>
+        </div>
+        <div class="card-title"><span class="card-title-dot"></span>Moisturizer</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Apply while skin is still slightly damp</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Use gentle upward strokes — never pull downward</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Don't forget your neck and décolletage</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Morning and night — consistency is key</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img-row">
+          <div class="img-area">
+            <img class="img-preview" alt="Sunscreen 1" src="photo/routine4.jpg">
+
+          </div>
+          <div class="img-area">
+            <img class="img-preview" alt="Sunscreen 2" src="photo/routine5.jpg">
+ 
+          </div>
+        </div>
+        <div class="card-title"><span class="card-title-dot"></span>Sunscreen</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Use SPF 30 or higher every single day</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Apply 15–20 minutes before going outside</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Reapply every 2 hours if you're in the sun</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Cover ears, neck and the back of your hands too</div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BATH -->
+  <section class="section bath" id="bath">
+    <div class="section-header">
+      <div class="section-icon">🛁</div>
+      <div>
+        <div class="section-title">Bath Routine</div>
+        <div class="section-subtitle">3 steps for soft, hydrated skin</div>
+      </div>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="img-row">
+          <div class="img-area">
+            <img class="img-preview" alt="Bath 1" src="photo/routine6.jpg">
+         
+          </div>
+          <div class="img-area">
+            <img class="img-preview" alt="Bath 2" src="photo/routine7.jpg">
+        
+          </div>
+        </div>
+        <div class="card-title"><span class="card-title-dot"></span>Shower</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Use warm — not hot — water (hot water dries out skin)</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Wash from top to bottom</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Keep showers under 10 minutes</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Pat dry immediately with a soft towel</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img-row">
+          <div class="img-area">
+            <img class="img-preview" alt="Body Scrub 1" src="photo/routine8.jpg">
+            
+          </div>
+          <div class="img-area">
+            <img class="img-preview" alt="Body Scrub 2" src="photo/routine9.jpg">
+     
+          </div>
+        </div>
+        <div class="card-title"><span class="card-title-dot"></span>Body Scrub</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Apply on damp skin</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Once a week is enough</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Focus on elbows, knees and heels</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Rinse well and enjoy the instant softness</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img-row">
+          <div class="img-area">
+            <img class="img-preview" alt="Body Lotion 1" src="photo/routine10.jpg">
+         
+          </div>
+          <div class="img-area">
+            <img class="img-preview" alt="Body Lotion 2" src="photo/routine11.jpg">
+            
+          </div>
+        </div>
+        <div class="card-title"><span class="card-title-dot"></span>Body Moisturizer</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Apply within the first 3 minutes after showering — that's the secret!</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Massage in to boost circulation</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Elbows and knees need extra product</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Body cream is better than lotion for dry skin</div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NAILS -->
+  <section class="section nails" id="nails">
+    <div class="section-header">
+      <div class="section-icon">💅</div>
+      <div>
+        <div class="section-title">Nail Care</div>
+        <div class="section-subtitle">3 steps for healthy, elegant nails</div>
+      </div>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="img-row">
+          <div class="img-area">
+            <img class="img-preview" alt="Nail Trim 1" src="photo/routine12.jpg">
+
+          </div>
+          <div class="img-area">
+            <img class="img-preview" alt="Nail Trim 2" src="photo/routine13.jpg">
+ 
+          </div>
+        </div>
+        <div class="card-title"><span class="card-title-dot"></span>Nail Trimming</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Trim after showering — nails are softer</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Cut straight, then gently round the edges with a file</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Never cut the living skin around the nail</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">A glass file is gentler than metal — prevents splitting</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img-row">
+          <div class="img-area">
+            <img class="img-preview" alt="Cuticle Care 1" src="photo/routine14.jpg">
+
+          </div>
+          <div class="img-area">
+            <img class="img-preview" alt="Cuticle Care 2" src="photo/routine15.jpg">
+          
+          </div>
+        </div>
+        <div class="card-title"><span class="card-title-dot"></span>Cuticle Moisturizing</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Apply oil (almond or coconut) daily to your cuticles</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Gently push cuticles back after showering</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Never cut them — just push gently</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Wear gloves when washing dishes or cleaning</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img-row">
+          <div class="img-area">
+            <img class="img-preview" alt="Healthy Nails 1" src="photo/routine15.jpg">
+            
+          </div>
+          <div class="img-area">
+            <img class="img-preview" alt="Healthy Nails 2" src="photo/routine14.jpg">
+ 
+          </div>
+        </div>
+        <div class="card-title"><span class="card-title-dot"></span>Healthy & Elegant Nails</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Trim your nails regularly every 1–2 weeks</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Massage with almond or castor oil daily for strength and shine</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Stay hydrated — inner hydration shows on your nails</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Biotin (found in eggs & nuts) strengthens nails from the root</div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HEALTH -->
+  <section class="section health" id="health">
+    <div class="section-header">
+      <div class="section-icon">💪</div>
+      <div>
+        <div class="section-title">Exercise & Health</div>
+        <div class="section-subtitle">3 habits that will change your life</div>
+      </div>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="img-row">
+          <div class="img-area">
+            <img class="img-preview" alt="Exercise 1" src="photo/routine16.jpg">
+            </div>
+          <div class="img-area">
+            <img class="img-preview" alt="Exercise 2" src="photo/routine17.jpg">
+ 
+          </div>
+        </div>
+        <div class="card-title"><span class="card-title-dot"></span>Exercise</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Start with just 20 minutes a day</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Always warm up 5 min before and cool down 5 min after</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Choose an activity you enjoy so you'll stick to it</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Three times a week is enough to start</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img-row">
+          <div class="img-area">
+            <img class="img-preview" alt="Water 1" src="photo/routine23.jpg">
+            </div>
+          <div class="img-area">
+            <img class="img-preview" alt="Water 2" src="photo/routine7.jpg">
+     
+          </div>
+        </div>
+        <div class="card-title"><span class="card-title-dot"></span>Hydration</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Drink a glass of water first thing in the morning</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Aim for 8 glasses a day (about 2 litres)</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Warm lemon water in the morning is a natural detox</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Use a reminder app or keep a bottle by your side</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img-row">
+          <div class="img-area">
+            <img class="img-preview" alt="Sleep 1" src="photo/routine18.jpg">
+         
+          </div>
+          <div class="img-area">
+            <img class="img-preview" alt="Sleep 2" src="photo/routine19.jpg">
+   
+          </div>
+        </div>
+        <div class="card-title"><span class="card-title-dot"></span>Sleep</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Keep a consistent sleep schedule — even on weekends</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">A dark, slightly cool room = deeper sleep</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Stop screens an hour before bed</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">7–8 hours is the ideal goal</div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NATURAL -->
+  <section class="section natural" id="natural">
+    <div class="section-header">
+      <div class="section-icon">🌿</div>
+      <div>
+        <div class="section-title">Natural Recipes</div>
+        <div class="section-subtitle">3 recipes from your kitchen</div>
+      </div>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="img-row">
+          <div class="img-area">
+            <img class="img-preview" alt="Sugar Scrub 1" src="photo/routine20.jpg">
+
+          </div>
+          <div class="img-area">
+            <img class="img-preview" alt="Sugar Scrub 2" src="photo/routine9.jpg">
+ 
+          </div>
+        </div>
+        <div class="card-title"><span class="card-title-dot"></span>Sugar & Lemon Scrub</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Mix 1 tbsp sugar + 1 tbsp honey + half a lemon</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Apply to face with gentle circular motions for 2 minutes</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Rinse with lukewarm water</div></div>
+        </div>
+        <div class="warning">⚠️ Avoid sun exposure right after — lemon sensitises skin</div>
+      </div>
+
+      <div class="card">
+        <div class="img-row">
+          <div class="img-area">
+            <img class="img-preview" alt="Coconut Oil 1" src="photo/routine21.jpg">
+
+          </div>
+          <div class="img-area">
+            <img class="img-preview" alt="Coconut Oil 2" src="photo/routine14.jpg">
+
+          </div>
+        </div>
+        <div class="card-title"><span class="card-title-dot"></span>Coconut Oil</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Hair: apply to ends or as an overnight mask</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Body: excellent moisturiser right after showering</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Nails: apply daily to cuticles</div></div>
+        </div>
+        <div class="warning">⚠️ Avoid applying to your face if you have oily or acne-prone skin</div>
+      </div>
+
+      <div class="card">
+        <div class="img-row">
+          <div class="img-area">
+            <img class="img-preview" alt="Honey Mask 1" src="photo/routine22.jpg">
+
+          </div>
+          <div class="img-area">
+            <img class="img-preview" alt="Honey Mask 2" src="photo/routine20.jpg">
+  
+          </div>
+        </div>
+        <div class="card-title"><span class="card-title-dot"></span>Honey Mask</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-text">Raw, unprocessed honey works best</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-text">Apply to a clean face and leave for 15–20 minutes</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-text">Rinse with lukewarm water</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-text">Suitable for all skin types — naturally hydrating & antibacterial</div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>🌸</span> Take care of yourself — you deserve it <span>🌸</span>
+</footer>
+
+<script>
+  function scrollToSection(id, btn) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const navHeight = document.querySelector('.nav').offsetHeight;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
+
+<a href="../home/index.html">back to home</a>
+</body>
+</html>
